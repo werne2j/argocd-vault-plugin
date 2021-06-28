@@ -18,10 +18,8 @@ builds:
       - netgo
       - static_build
 
-format: binary
-
-release:
-  prerelease: false
+archives:
+  - format: binary
 
 changelog:
   skip: true
