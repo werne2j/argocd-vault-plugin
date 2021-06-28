@@ -12,8 +12,7 @@ build:
 	go build -o ${BINARY} .
 
 release:
-	GOOS=darwin GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_darwin_amd64
-	GOOS=linux GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_linux_amd64
+	goreleaser release --skip-publish --rm-dist --release-notes <(git-chglog "{{.Tag}}")
 
 install: build
 
